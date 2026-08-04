@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="card shadow mx-auto" style="max-width:700px;">
+        <div class="card-body">
+
+            <h2 class="text-center mb-4">Add Announcement</h2>
+
+            <form method="POST">
+
+                <div class="mb-3">
+                    <label class="form-label">Title</label>
+                    <input type="text" class="form-control" name="title" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Description</label>
+                    <textarea class="form-control" name="description" rows="4" required></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Category</label>
+                    <select class="form-control" name="category" required>
+                        <option value="">Select Category</option>
+                        <option value="Competition">Competition</option>
+                        <option value="Workshop">Workshop</option>
+                        <option value="Awareness">Awareness</option>
+                        <option value="Meeting">Meeting</option>
+                        <option value="Event">Event</option>
+                        <option value="Announcement">Announcement</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Date</label>
+                    <input type="date" class="form-control" name="announcement_date" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">
+                    Add Announcement
+                </button>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

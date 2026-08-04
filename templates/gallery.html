@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <h1 class="text-center mb-3"><strong>Gallery</strong></h1>
+
+    <p class="text-center text-muted mb-5">
+        <strong>Explore the memorable moments of the LKC Computer Science Tech Hub Club.</strong>
+    </p>
+
+    <!-- Club Activities -->
+    <h2 class="mb-4">📸 Club Activities</h2>
+
+    <div class="row">
+
+        <div class="col-md-4 mb-4">
+            <img src="{{ url_for('static', filename='images/logocpt.jpeg') }}"
+                 class="img-fluid rounded shadow gallery-img"
+                 alt="Logo Design Competition">
+            <p class="text-center mt-2"><strong>Logo Design Competition</strong></p>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <img src="{{ url_for('static', filename='images/cyber.jpeg') }}"
+                 class="img-fluid rounded shadow gallery-img"
+                 alt="Cyber Security Programme">
+            <p class="text-center mt-2"><strong>Cyber Security Awareness Programme</strong></p>
+        </div>
+
+    </div>
+
+    <hr class="my-5">
+
+    <!-- Executive Committee -->
+    <h2 class="mb-4">👥 Executive Committee</h2>
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-6 mb-4">
+            <img src="{{ url_for('static', filename='images/ec_group.jpeg') }}"
+                 class="img-fluid rounded shadow gallery-img"
+                 alt="Executive Committee">
+            <p class="text-center mt-2"><strong>Executive Committee (2025–2026)</strong></p>
+        </div>
+
+    </div>
+
+    <hr class="my-5">
+
+    <!-- Tech Hub Members -->
+    <h2 class="mb-4">💙 Tech Hub Members</h2>
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-6 mb-4">
+            <img src="{{ url_for('static', filename='images/members_group.jpeg') }}"
+                 class="img-fluid rounded shadow gallery-img"
+                 alt="Tech Hub Members">
+            <p class="text-center mt-2"><strong>Tech Hub Club Members</strong></p>
+        </div>
+
+    </div>
+
+    <hr class="my-5">
+
+    <h2 class="mb-4">🆕 Latest Gallery Uploads</h2>
+
+    <div class="row">
+
+        {% for image in images %}
+
+        <div class="col-md-4 mb-4">
+            <img src="{{ url_for('static', filename='images/' + image[2]) }}"
+            class="img-fluid rounded shadow gallery-img"
+            alt="{{ image[1] }}">
+
+            <p class="text-center mt-2">
+            <strong>{{ image[1] }}</strong>
+            </p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+</div>
+
+
+{% endblock %}

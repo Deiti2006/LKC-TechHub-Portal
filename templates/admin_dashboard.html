@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <h2 class="text-center mb-4">
+        Admin Dashboard
+    </h2>
+
+    <div class="row">
+
+        <div class="col-md-3 mb-4">
+            <div class="card shadow text-center p-4 h-100 dashboard-card">
+                <h4>👥 Members</h4>
+                <h5>Total Members: {{ total_members }}</h2>
+                <p>View and manage club members.</p>
+                <a href="/manage_members" class="btn btn-primary">Open</a>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-4">
+            <div class="card shadow text-center p-4 h-100 dashboard-card">
+                <h4>📢 Announcements</h4>
+                <p>Add or edit announcements.</p>
+                <a href="/manage_announcements" class="btn btn-primary">Open</a>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-4">
+            <div class="card shadow text-center p-4 h-100 dashboard-card">
+                <h4>📚 Resources</h4>
+                <p>Upload and manage resources.</p>
+                <a href="/manage_resources" class="btn btn-primary">Open</a>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-4">
+            <div class="card shadow text-center p-4 h-100 dashboard-card">
+                <h4>🖼️ Gallery</h4>
+                <p>Manage gallery images.</p>
+                <a href="/manage_gallery" class="btn btn-primary">Open</a>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-4">
+            <div class="card shadow text-center p-4 h-100 dashboard-card">
+                <h4>📩 Messages</h4>
+                <p>View messages sent through the contact form.</p>
+                <a href="/view_messages" class="btn btn-primary">Open</a>
+            </div>
+        </div>
+
+        <div class="text-end mb-3">
+            <a href="/admin_logout" class="btn btn-danger">
+                Logout
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

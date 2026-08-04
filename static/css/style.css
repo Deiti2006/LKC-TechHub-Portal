@@ -1,0 +1,421 @@
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f8f9fc;
+}
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:#0F172A;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 30px;
+    margin-bottom: 0;
+}
+
+nav h2{
+    color:white;
+    margin:0;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+    align-items:center;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+    padding-bottom:5px;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#FFD700;
+}
+
+.nav-links a.active{
+    color:#FFD700;
+    border-bottom:3px solid #FFD700;
+    font-weight:bold;
+}
+
+h1{
+    text-align:center;
+    margin-top:50px;
+}
+
+p{
+    text-align:center;
+    font-size:20px;
+}
+
+.card{
+    background:#EAF4FF;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);    
+}
+
+.hero{
+    margin: 0;
+    margin-top: 0;
+    padding-top: 0;
+    background:linear-gradient(135deg,#4a6182,#1b538b,#03457a);
+    color:white;
+    padding:60px 30px;
+}
+
+.hero-content{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:40px;
+    max-width:1100px;
+    margin:auto;
+    flex-wrap:wrap;
+}
+
+.hero-logo{
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    background:white;
+    padding:8px;
+    object-fit:contain;
+    box-shadow:0 5px 15px rgba(0,0,0,.3);
+}
+
+.hero-text{
+    text-align:left;
+}
+
+.hero-text h1{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.tagline{
+    font-size:24px;
+    margin-bottom:10px;
+    font-weight:bold;
+}
+
+.description{
+    font-size:18px;
+    margin-bottom:20px;
+}
+
+.btn{
+    background:white;
+    color:#0d47a1;
+    padding:12px 28px;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+    transition:0.3s ease;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+.small-btn{
+    display:inline-block;
+    background:#ffffff;
+    color:#0d47a1;
+    padding:10px 22px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    border:2px solid #000 !important;   /* Black border */
+    transition:0.3s;
+}
+
+.small-btn:hover{
+    background:#000;
+    color:#fff;
+    border-color:#000;
+    transform:scale(1.05);
+}
+
+.join-btn{
+    display:inline-block;
+    background:#ffffff;
+    color:#0d47a1;
+    padding:12px 30px;
+    border-radius:30px;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:bold;
+    transition:0.3s;
+    border:2px solid #111214;
+}
+
+.join-btn:hover{
+    background:#0d47a1;
+    color:white;
+    transform:scale(1.05);
+}
+
+.ec-list li{
+    font-size: 22px;
+    font-weight: 500;
+}
+
+/* Faculty Coordinator & Executive Committee */
+
+.committee{
+    margin-top: 50px;
+}
+
+.committee h2{
+    color: #010812;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.ec-list{
+    background: #EAF4FF;
+    padding: 20px 35px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    font-size: 20px;
+    line-height: 2;
+}
+
+.ec-list li{
+    margin-bottom: 8px;
+}
+
+/* Faculty Coordinator */
+
+.faculty-card{
+    background:#EAF4FF;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.faculty-card p{
+    font-size:18px;
+    margin:5px 0;
+    text-align: left;
+}
+
+/* Announcements */
+
+.announcement-card{
+    border:none;
+    border-left:6px solid #0D47A1;
+    border-radius:12px;
+    transition:0.3s;
+}
+
+.announcement-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Resources Page */
+
+.resource-card{
+    border: none;
+    border-radius: 15px;
+    transition: 0.3s;
+    background: #EAF4FF;
+}
+
+.resource-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.resource-card h3{
+    color: #0D47A1;
+    font-weight: bold;
+}
+
+.resource-card p{
+    color: #555;
+}
+
+.form-control,
+.form-select{
+    border-radius:10px;
+    border:1px solid #ced4da;
+    transition:0.3s;
+}
+
+.form-control:focus,
+.form-select:focus{
+    box-shadow:0 0 8px rgba(13,71,161,.3);
+    border-color:#0D47A1;
+}
+
+.gallery-img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:12px;
+    transition:0.3s;
+}
+
+.gallery-img:hover{
+    transform:scale(1.05);
+}
+
+h1,h2,h3{
+    color:#041332;
+    font-weight:bold;
+}
+
+/* Contact Page */
+
+.card{
+    border:none;
+    border-radius:15px;
+    box-shadow:0 6px 15px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h3{
+    color:#0D47A1;
+}
+
+/*login page*/
+
+.form-control{
+    border-radius:10px;
+}
+
+.btn-primary{
+    border-radius:8px;
+}
+
+.form-control,
+.form-select{
+    border-radius:10px;
+}
+
+.card{
+    border-radius:15px;
+}
+
+/*admin button*/
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/*admin_dashboard*/
+.dashboard-card{
+    border-radius:15px;
+    transition:0.3s;
+}
+
+.dashboard-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+table{
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.table tbody tr:hover{
+    background:#f5f5f5;
+}
+
+/*dashboard*/
+.card{
+    border:none;
+    border-radius:15px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card h1{
+    font-size:50px;
+}
+
+.btn{
+    border-radius:10px;
+}
+
+table th{
+    background:#f8f9fa;
+}
+
+/* About Page */
+
+.about-card{
+    border:none;
+    border-radius:15px;
+}
+
+.section-title{
+    color:#0D47A1;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.info-card{
+    border:none;
+    border-radius:15px;
+    transition:.3s;
+    background:#EAF4FF;
+}
+
+.info-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 10px 20px rgba(0,0,0,.15);
+}
+
+.info-card h3{
+    color:#0D47A1;
+    margin-bottom:15px;
+}
+
+.committee-card{
+    border:none;
+    border-radius:15px;
+    transition:.3s;
+    background:#ffffff;
+}
+
+.committee-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 10px 20px rgba(0,0,0,.15);
+}
+
+.committee-card h4{
+    color:#0D47A1;
+    font-weight:bold;
+}
+
+.member-list{
+    font-size:18px;
+    line-height:2;
+}
+
+.member-list li{
+    margin-bottom:8px;
+}

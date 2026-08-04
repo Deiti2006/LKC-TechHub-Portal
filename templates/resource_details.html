@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="card shadow-lg">
+
+        <div class="card-body p-5">
+
+            <h2 class="mb-3">
+                {{ resource[1] }}
+            </h2>
+
+            <p class="text-muted">
+                {{ resource[2] }}
+            </p>
+
+            <hr>
+
+            <h4>Notes</h4>
+
+            <p style="white-space: pre-line;">
+                {{ resource[4] }}
+            </p>
+
+            <hr>
+
+            <a href="{{ resource[3] }}"
+               target="_blank"
+               class="btn btn-success">
+                📖 Click for more details
+            </a>
+
+            <a href="/resources"
+               class="btn btn-secondary">
+                Back
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

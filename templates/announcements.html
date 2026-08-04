@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <h1 class="text-center mb-3">Latest Announcements</h1>
+    <p class="text-center text-muted mb-5">
+        Stay updated with the latest news, competitions, workshops and activities of the Tech Hub Club.
+    </p>
+
+    <!-- Announcement 1 -->
+    <div class="card shadow-sm mb-4 announcement-card">
+        <div class="card-body">
+            <span class="badge bg-danger">Competition</span>
+            <span class="text-muted ms-2">15 July 2025</span>
+
+            <h4 class="mt-3">📢 Inter Semester Quiz Competition</h4>
+
+            <p>
+                The Tech Hub Club organized an Inter Semester Quiz Competition to
+                enhance students' technical knowledge and teamwork.
+            </p>
+
+            
+        </div>
+    </div>
+
+    <!-- Announcement 2 -->
+    <div class="card shadow-sm mb-4 announcement-card">
+        <div class="card-body">
+            <span class="badge bg-success">Competition</span>
+            <span class="text-muted ms-2">22 August 2025</span>
+
+            <h4 class="mt-3">🎨 Logo Design Competition</h4>
+
+            <p>
+                Students showcased their creativity by designing logos that represent
+                the vision and identity of the Tech Hub Club.
+            </p>
+
+            
+        </div>
+    </div>
+
+    <!-- Announcement 3 -->
+    <div class="card shadow-sm mb-4 announcement-card">
+        <div class="card-body">
+            <span class="badge bg-info">Workshop</span>
+            <span class="text-muted ms-2">10 September 2025</span>
+
+            <h4 class="mt-3">🤖 AI Prompt Video Making Competition</h4>
+
+            <p>
+                Students created innovative videos using AI prompts and demonstrated
+                creativity, problem-solving, and technical skills.
+            </p>
+
+           
+        </div>
+    </div>
+
+    <!-- Announcement 4 -->
+    <div class="card shadow-sm announcement-card">
+        <div class="card-body">
+            <span class="badge bg-warning text-dark">Awareness</span>
+            <span class="text-muted ms-2">18 October 2025</span>
+
+            <h4 class="mt-3">🔐 Cyber Security Awareness Programme</h4>
+
+            <p>
+                A special awareness programme was conducted to educate students
+                about cyber safety, online privacy, and responsible digital practices.
+            </p>
+
+            
+        </div>
+    </div>
+    <br>
+
+    {% for announcement in announcements %}
+    <div class="card shadow-sm mb-4 announcement-card">
+        <div class="card-body">
+
+            <span class="badge bg-warning text-dark">
+                {{ announcement[3] }}
+            </span>
+
+            <span class="text-muted ms-3">
+                {{ announcement[4] }}
+            </span>
+
+            <h4 class="mt-3">📢 {{ announcement[1] }}</h4>
+
+            <p>{{ announcement[2] }}</p>
+
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

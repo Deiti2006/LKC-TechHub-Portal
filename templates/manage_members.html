@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Members</title>
+</head>
+<body>
+
+    <br><br>
+
+    <form method="GET" action="/manage_members">
+
+        <input
+            type="text"
+            name="search"
+            placeholder="Search by Name, Roll No or Email"
+            value="{{ search if search else '' }}">
+
+        <button type="submit">Search</button>
+
+        <a href="/manage_members">
+            <button type="button">Clear</button>
+        </a>
+
+    </form>
+
+    <br>
+
+    <h2>Registered Members</h2>
+
+    <table border="1" cellpadding="8">
+
+        <tr>
+            <th>ID</th>
+            <th>Full Name</th>
+            <th>Roll Number</th>
+            <th>Department</th>
+            <th>Semester</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Action</th>
+        </tr>
+
+        {% for member in members %}
+
+        <tr>
+            <td>{{ member[0] }}</td>
+            <td>{{ member[1] }}</td>
+            <td>{{ member[2] }}</td>
+            <td>{{ member[3] }}</td>
+            <td>{{ member[4] }}</td>
+            <td>{{ member[5] }}</td>
+            <td>{{ member[6] }}</td>
+
+            <td>
+                <a href="/delete_member/{{ member[0] }}"
+                   onclick="return confirm('Are you sure you want to delete this member?')">
+                    <button type="button">Delete</button>
+                </a>
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</body>
+</html>

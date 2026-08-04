@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <h1 class="text-center mb-3"><strong>Contact Us</strong></h1>
+
+    <p class="text-center text-muted mb-5">
+        We'd love to hear from you! Feel free to contact the Tech Hub Club.
+    </p>
+
+    <div class="row">
+
+        <!-- Contact Information -->
+        <div class="col-md-5">
+
+            <div class="card shadow p-4">
+
+                <h3>Contact Information</h3>
+                <hr>
+
+                <p><strong>📍 Address:</strong><br>
+                Department of Computer Science<br>
+                Lady Keane College
+                Shillong - 793001</p>
+
+                <p><strong>📧 Email:</strong><br>
+                techhub@ladykeanecollege.edu.in</p>
+
+                <p><strong>📞 Phone:</strong><br>
+                +91 XXXXX X0614</p>
+
+            </div>
+
+        </div>
+
+        <!-- Contact Form -->
+        <div class="col-md-7">
+
+            <div class="card shadow p-4">
+
+                <h3>Send us a Message</h3>
+
+                <form method="POST" action="/contact">
+
+                <div class="mb-3">
+                    <label>Name</label>
+                    <input 
+                        type="text" 
+                        name="name"
+                        class="form-control" 
+                        placeholder="Enter your name"
+                        required>
+                </div>
+
+                <div class="mb-3">
+                    <label>Email</label>
+                    <input 
+                        type="email"
+                        name="email"
+                        class="form-control" 
+                        placeholder="Enter your email"
+                        required>
+                </div>
+
+                <div class="mb-3">
+                    <label>Subject</label>
+                    <input 
+                        type="text"
+                        name="subject"
+                        class="form-control"
+                        placeholder="Enter subject"
+                        required>
+                </div>
+
+                <div class="mb-3">
+                    <label>Message</label>
+                    <textarea 
+                        name="message"
+                        class="form-control"
+                        rows="5"
+                        placeholder="Write your message"
+                        required></textarea>
+                </div>
+
+                <button class="btn btn-primary">
+                    Send Message
+                </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

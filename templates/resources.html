@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <h1 class="text-center mb-3">Learning Resources</h1>
+
+    <p class="text-center text-muted mb-4">
+        Access study materials, programming notes and learning resources provided by the Tech Hub Club.
+    </p>
+
+    <div class="row">
+
+    {% for resource in resources %}
+    <div class="col-md-4 mb-4">
+        <div class="card resource-card h-100 shadow-sm">
+            <div class="card-body">
+
+                <h3>{{ resource[1] }}</h3>
+
+                <p>{{ resource[2] }}</p>
+
+                <a href="{{ url_for('resource_details', id=resource[0]) }}"
+                class="btn btn-primary">
+                    Open Resource
+                </a>
+
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+</div>
+
+{% endblock %}

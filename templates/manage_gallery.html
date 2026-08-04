@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <h2 class="text-center mb-4">
+        Manage Gallery
+    </h2>
+
+    <div class="mb-3">
+        <a href="/add_gallery" class="btn btn-success">
+            ➕ Add New Image
+        </a>
+    </div>
+
+    <table class="table table-bordered table-hover">
+
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        {% for image in images %}
+
+        <tr>
+
+            <td>{{ image[0] }}</td>
+
+            <td>
+                <img src="{{ url_for('static', filename='images/' + image[2]) }}"
+                     width="100">
+            </td>
+
+            <td>{{ image[1] }}</td>
+
+            <td>{{ image[3] }}</td>
+
+            <td>
+
+                <a href="/edit_gallery/{{ image[0] }}"
+                   class="btn btn-warning btn-sm">
+                    Edit
+                </a>
+
+                <a href="/delete_gallery/{{ image[0] }}"
+                   class="btn btn-danger btn-sm"
+                   onclick="return confirm('Delete this image?')">
+                    Delete
+                </a>
+
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+{% endblock %}

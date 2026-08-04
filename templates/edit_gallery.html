@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-8">
+
+            <div class="card shadow">
+
+                <div class="card-body">
+
+                    <h2 class="text-center mb-4">
+                        Edit Gallery Image
+                    </h2>
+
+                    <form method="POST">
+
+                        <div class="mb-3">
+                            <label>Title</label>
+                            <input type="text"
+                                   name="title"
+                                   class="form-control"
+                                   value="{{ image[1] }}"
+                                   required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label>Description</label>
+                            <textarea
+                                name="description"
+                                class="form-control"
+                                rows="4"
+                                required>{{ image[3] }}</textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-success">
+                            Update Image
+                        </button>
+
+                        <a href="/manage_gallery"
+                           class="btn btn-secondary">
+                            Cancel
+                        </a>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

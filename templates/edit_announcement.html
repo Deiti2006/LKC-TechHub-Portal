@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="card shadow mx-auto" style="max-width:700px;">
+        <div class="card-body">
+
+            <h2 class="text-center mb-4">Edit Announcement</h2>
+
+            <form method="POST">
+
+                <div class="mb-3">
+                    <label class="form-label">Title</label>
+                    <input type="text"
+                           class="form-control"
+                           name="title"
+                           value="{{ announcement[1] }}"
+                           required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Description</label>
+                    <textarea class="form-control"
+                              name="description"
+                              rows="4"
+                              required>{{ announcement[2] }}</textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Category</label>
+                    <select class="form-control" name="category" required>
+
+                        <option value="Competition"
+                        {% if announcement[3]=='Competition' %}selected{% endif %}>
+                        Competition
+                        </option>
+
+                        <option value="Workshop"
+                        {% if announcement[3]=='Workshop' %}selected{% endif %}>
+                        Workshop
+                        </option>
+
+                        <option value="Awareness"
+                        {% if announcement[3]=='Awareness' %}selected{% endif %}>
+                        Awareness
+                        </option>
+
+                        <option value="Meeting"
+                        {% if announcement[3]=='Meeting' %}selected{% endif %}>
+                        Meeting
+                        </option>
+
+                        <option value="Event"
+                        {% if announcement[3]=='Event' %}selected{% endif %}>
+                        Event
+                        </option>
+
+                        <option value="Announcement"
+                        {% if announcement[3]=='Announcement' %}selected{% endif %}>
+                        Announcement
+                        </option>
+
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Date</label>
+                    <input type="date"
+                           class="form-control"
+                           name="announcement_date"
+                           value="{{ announcement[4] }}"
+                           required>
+                </div>
+
+                <button type="submit" class="btn btn-success w-100">
+                    Update Announcement
+                </button>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

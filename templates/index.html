@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="hero">
+    <div class="hero-content">
+
+        <img src="{{ url_for('static', filename='images/logo.jpeg') }}"
+             alt="Tech Hub Logo"
+             class="hero-logo">
+
+        <div class="hero-text">
+            <h1>LKC Computer Science Tech Hub Club Portal</h1>
+
+            <p class="tagline">
+                Learn • Innovate • Collaborate
+            </p>
+
+            <p class="description">
+                Empowering students through technology, innovation,
+                leadership, teamwork, and creativity.
+            </p>
+
+            </div>
+            <div class="hero-buttons">
+                <a href="/register" class="join-btn">
+                    Register Now
+                </a>
+
+                <a href="/admin" class="join-btn">
+                    Admin Login
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="about">
+    <div class="container">
+        <br>
+        <h2>About the Tech Hub Club</h2>
+
+        <p>
+            The <strong>Tech Hub Club</strong> of the Department of Computer Science,
+            Lady Keane College, Shillong, is a student-led club established to
+            encourage learning, innovation, collaboration, and technical excellence.
+            The club provides students with opportunities to enhance their knowledge,
+            participate in technical activities, and develop leadership and teamwork skills.
+        </p>
+
+        <h2>Club History</h2>
+
+        <p>
+            Established in <strong>2016</strong>, the Tech Hub Club has been actively
+            promoting computing knowledge and student engagement through various
+            academic and co-curricular activities. The club was created to support
+            students of the Department of Computer Science by fostering interest in
+            computing, mentorship, social interaction, and professional development.
+            It continues to inspire students by organizing events, competitions,
+            workshops, and awareness programmes.
+        </p>
+
+        <a href="/about" class="small-btn">Read More</a>
+    </div>
+</section>
+
+{% endblock %}
