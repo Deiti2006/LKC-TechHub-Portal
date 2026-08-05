@@ -5,7 +5,7 @@ import os
 
 
 app=Flask(__name__)#flask application is being created
-app.secret_key="techhub123"
+app.secret_key = os.environ.get("SECRET_KEY", "dev-secret-key")
 
 from functools import wraps
 
@@ -233,7 +233,7 @@ def add_gallery():
         cursor.execute(
             """
             INSERT INTO gallery(title, image_url)
-            VALUES(%s, %s, %s)
+            VALUES(%s, %s)
             """,
             (title, filename)
         )
@@ -472,8 +472,8 @@ def admin_login():
     return render_template("admin_login.html")
 
 #admin_dashboard
-@admin_required
 @app.route("/admin_dashboard")
+@admin_required
 def admin_dashboard():
 
     cursor.execute("SELECT COUNT(*) FROM members")
@@ -677,5 +677,8 @@ def admin_logout():
     return redirect("/admin")
 
 #Run application
-if __name__=="__main__":
-    app.run(debug=True)
+if __name__ == "__main__":
+    app.run(
+        host="0.0.0.0",
+        port=int(os.environ.get("PORT", 5000))
+    )
