@@ -4,11 +4,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-conn = psycopg2.connect(
-    host=os.getenv("DB_HOST", "localhost"),
-    database=os.getenv("DB_NAME", "techhub"),
-    user=os.getenv("DB_USER", "postgres"),
-    password=os.getenv("DB_PASSWORD")
-)
+DATABASE_URL = os.getenv("DATABASE_URL")
+
+conn = psycopg2.connect(DATABASE_URL)
 
 cursor = conn.cursor()
