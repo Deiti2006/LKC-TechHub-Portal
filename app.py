@@ -465,7 +465,7 @@ def admin_login():
 
         if admin:
             session["admin"] = admin[1]  
-            return redirect("Login Sucessful")
+            return redirect("/admin_dashboard")
         else:
             return "Invalid Admin Login"
 
