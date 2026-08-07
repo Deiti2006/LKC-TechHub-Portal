@@ -465,7 +465,7 @@ def admin_login():
 
         if admin:
             session["admin"] = admin[1]  
-            return redirect("/admin_dashboard")
+            return redirect("Login Sucessful")
         else:
             return "Invalid Admin Login"
 
@@ -678,7 +678,4 @@ def admin_logout():
 
 #Run application
 if __name__ == "__main__":
-    app.run(
-        host="0.0.0.0",
-        port=int(os.environ.get("PORT", 5000))
-    )
+  app.run(host="0.0.0.0", port=5000, debug=True)

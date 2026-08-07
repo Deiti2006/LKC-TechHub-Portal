@@ -5,7 +5,10 @@ from dotenv import load_dotenv
 load_dotenv()
 
 DATABASE_URL = os.getenv("DATABASE_URL")
+print(DATABASE_URL)
 
 conn = psycopg2.connect(DATABASE_URL)
+
+print("Connected database:",conn.get_dsn_parameters())
 
 cursor = conn.cursor()
